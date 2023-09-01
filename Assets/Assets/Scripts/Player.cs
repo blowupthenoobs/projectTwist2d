@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     private Vector2 moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +20,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
        moveAndRotate();
-
 
        if (Input.GetKeyDown(KeyCode.R))
        {
