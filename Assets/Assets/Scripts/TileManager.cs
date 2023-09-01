@@ -10,6 +10,7 @@ public class TileManager : MonoBehaviour
     public Tilemap interactableMap;
     public Tile hiddenIteractableTile;
     public Tile interactedTile;
+    public Tile potentiolTile;
     public Grid grid;
     Vector3Int cellPosition;
     bool tileConfirmed = false;
@@ -58,10 +59,16 @@ public class TileManager : MonoBehaviour
     }
 
 
-    public void SetInteracted2(Vector3Int position)
+    public void SetInteractedHidden(Vector3Int position)
     {
         interactableMap.SetTile(position, hiddenIteractableTile);
     }
+
+    public void SetInteractedPotential(Vector3Int position)
+    {
+        interactableMap.SetTile(position, potentiolTile);
+    }
+
     private void OnMouseEnter()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -71,22 +78,22 @@ public class TileManager : MonoBehaviour
         if (IsIteractable(cellPosition))
         {
             isInteracting = true;
-           SetInteracted((Vector3Int)cellPosition);
+           SetInteractedPotential((Vector3Int)cellPosition);
             
         }
     }
     private void OnMouseExit()
     {
-        if (tileConfirmed)
+        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "Growing")
         {
-            tileConfirmed = false;
-        
+            SetInteractedHidden((Vector3Int)cellPosition);
+
+
         }
         else
         {
-            SetInteracted2((Vector3Int)cellPosition);
+            tileConfirmed = false;
         }
 
-        
     }
 }
