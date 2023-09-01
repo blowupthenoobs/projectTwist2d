@@ -12,7 +12,7 @@ public class MeleeEnemyScript : MonoBehaviour
     //Targeting variables
     public float attackRange;
     public float visionDistance;
-    public bool targetNearby;
+    private bool targetNearby;
     private Transform target;
     public LayerMask playerLayer;
 
@@ -33,10 +33,10 @@ public class MeleeEnemyScript : MonoBehaviour
         CheckforPlayer();
 
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Hurt(int takenDamage)
     {
-        
+        hp-=takenDamage;
     }
 
     // Update is called once per frame
@@ -71,9 +71,9 @@ public class MeleeEnemyScript : MonoBehaviour
     }
 
     public void Flip()
-        {
-            transform.Rotate(0f, 180f, 0f);
-        }
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
 
     private void CheckforPlayer()
     {
