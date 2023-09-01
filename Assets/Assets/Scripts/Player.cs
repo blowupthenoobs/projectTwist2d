@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     private Vector2 moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    // public GameObject gameManager;
 
 
     void Start()
@@ -24,7 +23,9 @@ public class Player : MonoBehaviour
     {
        moveAndRotate();
     }
-    
+
+
+
     private void moveAndRotate() //does not rotate yet
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
