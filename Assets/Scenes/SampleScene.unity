@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c63f13d2b2b6af468ec3deaf3b1e882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 4271149477147926858, guid: c434a1777c5e3e5498cdcccf7048df98, type: 3}
 --- !u!212 &388448087
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1770,7 +1771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2262f612dc01204fb1c6a6abfd85754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
+  maxmoveSpeed: 7
+  deccelleration: 5
+  accelleration: 7
 --- !u!212 &585292233
 SpriteRenderer:
   m_ObjectHideFlags: 0
