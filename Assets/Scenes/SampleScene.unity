@@ -27722,9 +27722,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2262f612dc01204fb1c6a6abfd85754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxmoveSpeed: 20
+  maxmoveSpeed: 7
   deccelleration: 5
-  accelleration: 20
+  accelleration: 7
 --- !u!212 &585292233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28912,7 +28912,7 @@ MonoBehaviour:
   interactableMap: {fileID: 588515871}
   hiddenIteractableTile: {fileID: 11400000, guid: 9861c97057b79cc4e96f918f62d7f777, type: 2}
   interactedTile: {fileID: 11400000, guid: febc6744bf242764581dacbbf33e8a60, type: 2}
-  potentiolTile: {fileID: 11400000, guid: 6a43e4431cf93f040bdb2bf0e7547262, type: 2}
+  potentiolTile: {fileID: 0}
   grid: {fileID: 56006678}
 --- !u!1 &629278736
 GameObject:
