@@ -23,17 +23,11 @@ public class Player : MonoBehaviour
     {
        moveAndRotate();
 
-
        if (Input.GetKeyDown(KeyCode.R))
        {
             moveSpeed.x=-10;
        }
     }
-
-
-
-
-
 
 
 
