@@ -22,11 +22,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
        moveAndRotate();
-
-       if (Input.GetKeyDown(KeyCode.R))
-       {
-            moveSpeed.x=-10;
-       }
     }
 
 
@@ -47,17 +42,6 @@ public class Player : MonoBehaviour
 
 
         rotateController();
-	  if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, (0));
-            if (gameManager.TileManager.IsIteractable(position)) {
-               
-               
-                print("Hello");
-                gameManager.TileManager.SetInteracted(position);
-           
-            }
-        }
 
 
     }
@@ -171,5 +155,10 @@ public class Player : MonoBehaviour
         {
             moveSpeed.y+=deccelleration;
         }
+    }
+
+    private void getMouseposition()
+    {
+
     }
 }
