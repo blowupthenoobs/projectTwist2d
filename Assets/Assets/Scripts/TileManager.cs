@@ -15,8 +15,6 @@ public class TileManager : MonoBehaviour
     Vector3Int cellPosition;
     bool tileConfirmed = false;
     bool isInteracting = false;
-
-
     void Start()
     {
         
