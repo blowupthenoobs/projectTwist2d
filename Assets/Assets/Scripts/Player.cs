@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    public GameManager gameManager;
+    // public GameObject gameManager;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +45,19 @@ public class Player : MonoBehaviour
 
 
         rotateController();
+	  if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, (0));
+            if (gameManager.TileManager.IsIteractable(position)) {
+               
+               
+                print("Hello");
+                gameManager.TileManager.SetInteracted(position);
+           
+            }
+        }
+
+
     }
 
 
