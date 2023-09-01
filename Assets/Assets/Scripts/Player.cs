@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Rigidbody2D rb;
     public float maxmoveSpeed;
     public float deccelleration;
     public float accelleration;
     private Vector2 moveSpeed;
-    private Rigidbody2D rb;
+    
     private Vector2 moveInput;
 
 

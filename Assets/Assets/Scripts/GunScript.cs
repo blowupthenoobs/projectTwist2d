@@ -27,7 +27,7 @@ public class GunScript : MonoBehaviour
 
     private void Fire()
     {
-        GameObject projectile = Instantiate(bullet, firingPosition.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
     }
 
     private void FaceMouse()
