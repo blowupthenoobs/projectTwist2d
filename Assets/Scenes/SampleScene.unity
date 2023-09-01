@@ -1408,7 +1408,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 5.84, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1710,6 +1710,8 @@ GameObject:
   - component: {fileID: 588515869}
   - component: {fileID: 588515871}
   - component: {fileID: 588515870}
+  - component: {fileID: 588515873}
+  - component: {fileID: 588515874}
   m_Layer: 0
   m_Name: InteractableMap
   m_TagString: Untagged
@@ -2025,6 +2027,58 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &588515873
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588515868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &588515874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588515868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c9ce6c2b399e4418ee7dff47c00c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableMap: {fileID: 588515871}
+  hiddenIteractableTile: {fileID: 11400000, guid: 9861c97057b79cc4e96f918f62d7f777, type: 2}
+  interactedTile: {fileID: 11400000, guid: febc6744bf242764581dacbbf33e8a60, type: 2}
+  grid: {fileID: 56006678}
 --- !u!1 &629278736
 GameObject:
   m_ObjectHideFlags: 0
@@ -14656,7 +14710,6 @@ GameObject:
   - component: {fileID: 2053833012}
   - component: {fileID: 2053833014}
   - component: {fileID: 2053833015}
-  - component: {fileID: 2053833016}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14719,21 +14772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileManager: {fileID: 0}
---- !u!114 &2053833016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053833011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c9ce6c2b399e4418ee7dff47c00c53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableMap: {fileID: 588515871}
-  hiddenIteractableTile: {fileID: 11400000, guid: 9861c97057b79cc4e96f918f62d7f777, type: 2}
-  interactedTile: {fileID: 11400000, guid: febc6744bf242764581dacbbf33e8a60, type: 2}
 --- !u!1 &2109935245
 GameObject:
   m_ObjectHideFlags: 0
