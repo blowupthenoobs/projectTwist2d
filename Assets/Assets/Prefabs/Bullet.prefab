@@ -196,3 +196,4 @@ MonoBehaviour:
   moveSpeed: 3
   lifeTime: 3
   Direction: {fileID: 1943725789633475184}
+  damage: 3

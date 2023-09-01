@@ -43,6 +43,7 @@ public class MeleeEnemyScript : MonoBehaviour
     void Update()
     {
         target=GameObject.FindWithTag("Player").transform;
+
         if(hp<=0)
         {
             Destroy(gameObject);
@@ -68,6 +69,11 @@ public class MeleeEnemyScript : MonoBehaviour
         {
 
         }
+    }
+
+    public void Hurt(int recievedDamage)
+    {
+        hp-=recievedDamage;
     }
 
     public void Flip()

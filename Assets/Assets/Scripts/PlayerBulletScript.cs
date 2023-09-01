@@ -9,10 +9,18 @@ public class PlayerBulletScript : MonoBehaviour
     public float lifeTime;
     private float lifeCountdown=0;
     public GameObject Direction;
+    public int damage;
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void SetStats(int damageStat, float lifeTimeStat, float moveSpeedStat)
+    {
+        damage=damageStat;
+        lifeTime=lifeTimeStat;
+        moveSpeed=moveSpeedStat;
     }
 
     // Update is called once per frame
@@ -24,5 +32,15 @@ public class PlayerBulletScript : MonoBehaviour
             lifeCountdown+=Time.fixedDeltaTime;
         else
             Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag=="Enemy")
+        {
+            other.gameObject.SendMessage("Hurt", damage);
+        }
+
+        Destroy(gameObject);
     }
 }
