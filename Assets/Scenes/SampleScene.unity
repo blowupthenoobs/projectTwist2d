@@ -699,7 +699,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2896d1689ec942d4c8d5c26194d681a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27763,6 +27763,8 @@ MonoBehaviour:
   maxmoveSpeed: 7
   deccelleration: 5
   accelleration: 7
+  maxhp: 0
+  hp: 0
 --- !u!212 &585292233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34615,6 +34617,10 @@ PrefabInstance:
     - target: {fileID: 1338625795076928519, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3103148201921446128, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
+      propertyPath: cooldown
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.x

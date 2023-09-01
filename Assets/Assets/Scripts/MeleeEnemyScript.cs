@@ -17,10 +17,14 @@ public class MeleeEnemyScript : MonoBehaviour
     public LayerMask playerLayer;
 
     //Attack Variables
+    public float cooldown;
     private float currentCooldown;
     public float attackCooldown;
-    private bool isAttacking;
     public int damage;
+    public float attackLength;
+    public float attackSpeed;
+    public GameObject firingPosition;
+    public GameObject bullet;
 
 
     void Awake()
@@ -31,7 +35,7 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         Move();
         CheckforPlayer();
-
+        AttackCooldown();
     }
 
     private void Hurt(int takenDamage)
@@ -43,10 +47,12 @@ public class MeleeEnemyScript : MonoBehaviour
     void Update()
     {
         target=GameObject.FindWithTag("Player").transform;
+
         if(hp<=0)
         {
             Destroy(gameObject);
         }
+
     }
 
     //Move Script
@@ -54,20 +60,37 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         if(targetNearby)
         {
+            // transform.LookAt(target);
+
             if(Vector2.Distance(transform.position, target.position) > attackRange)
             {
-                isAttacking=false;
                 transform.position=Vector2.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
             }
             else
             {
-                isAttacking=true;
+                Attack();
             }
         }
         else
         {
 
         }
+    }
+
+    private void Attack()
+    {
+        if(currentCooldown>=cooldown)
+        {
+            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
+            projectile.GetComponent<EnemyMeleeProjectileScript>().SetStats(damage, attackLength, attackSpeed);
+            currentCooldown=0;
+        }
+    }
+
+    private void AttackCooldown()
+    {
+        if(currentCooldown<cooldown)
+            currentCooldown+=Time.fixedDeltaTime;
     }
 
     public void Flip()

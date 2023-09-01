@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+    public int maxhp;
+    public int hp;
+
 
     void Start()
     {
@@ -52,6 +55,11 @@ public class Player : MonoBehaviour
     private void rotateController()
     {
 	
+    }
+
+    public void Hurt(int damage)
+    {
+        hp-=damage;
     }
 
 
