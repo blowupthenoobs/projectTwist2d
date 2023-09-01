@@ -738,6 +738,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4271149477147926858, guid: c434a1777c5e3e5498cdcccf7048df98, type: 3}
   firingPosition: {fileID: 936568145}
+  cooldown: 0.2
+  damage: 1
+  bulletLife: 1.5
+  bulletSpeed: 0.2
 --- !u!212 &388448087
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15129,6 +15133,14 @@ PrefabInstance:
     - target: {fileID: 1338625795076928519, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338625795076928519, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551663185893997857, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.x
