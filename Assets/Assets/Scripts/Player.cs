@@ -12,10 +12,14 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+    public int maxhp;
+    public int hp;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hp=maxhp;
     }
 
 
@@ -52,6 +56,13 @@ public class Player : MonoBehaviour
     private void rotateController()
     {
 	
+    }
+
+    public void Hurt(int damage)
+    {
+        hp-=damage;
+        if(hp<=0)
+            Debug.Log("You're dead");
     }
 
 
