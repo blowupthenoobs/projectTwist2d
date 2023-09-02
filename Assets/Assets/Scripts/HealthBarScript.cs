@@ -7,8 +7,8 @@ public class HealthBarScript : MonoBehaviour
 {
     public Image HealthBar;
     public GameObject Player;
-    public int playerHealth;
-    private int playerMaxHealth;
+    public float playerHealth;
+    private float playerMaxHealth;
     public float transitionSpeed;
 
     void Update()

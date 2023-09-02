@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
-    public int maxhp;
-    public int hp;
+    public float maxhp;
+    public float hp;
 
 
     void Start()
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     {
         hp-=damage;
         if(hp<=0)
-            Debug.Log("You're dead");
+            GameManager.Instance.Die();
     }
 
 
