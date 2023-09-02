@@ -22,7 +22,7 @@ public class SpawnerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(cooldown>spawnTime)
+        if(cooldown<spawnTime)
             cooldown+=Time.fixedDeltaTime;
         else
         {
@@ -33,6 +33,7 @@ public class SpawnerScript : MonoBehaviour
 
     private void SpawnMonsters(int x)
     {
+        Debug.Log("Was Called");
         for(int i=0; i<=x; i++)
         {
             Index=Random.Range(0,spawnLocations.Length);
