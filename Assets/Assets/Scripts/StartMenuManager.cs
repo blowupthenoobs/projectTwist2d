@@ -21,6 +21,6 @@ public class StartMenuManager : MonoBehaviour
 
     public void updateScene()
     {
-       SceneManager.LoadScene("SampleScene");
+       SceneManager.LoadScene("InsideHouse");
     }
 }
