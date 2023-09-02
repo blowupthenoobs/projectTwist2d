@@ -16,12 +16,23 @@ public class Player : MonoBehaviour
     public float hp;
 
 
+    [Header("Animations")]
+    public Animator _anim;
+    private bool isMoving;
+    //public bool DayTime;
+    //public bool NightTime;
+    // public GameObject gameManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();        
         hp=maxhp;
     }
 
+    void Update(){
+
+    }
 
     void FixedUpdate()
     {
@@ -44,12 +55,38 @@ public class Player : MonoBehaviour
 
         rb.velocity = moveSpeed * Time.fixedDeltaTime * 100;
 
-
+        AnimationStateChange();
         rotateController();
 
 
     }
 
+    void AnimationStateChange(){
+        //horizontal movement
+        if(moveSpeed.x < 0){
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
+        }else if(moveSpeed.x > 0){
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
+        }
+        if(moveSpeed.x < 0 || moveSpeed.x > 0){
+            _anim.SetBool("isMovingHorizontal", true);
+        }else{
+            _anim.SetBool("isMovingHorizontal", false);
+        }
+
+        //vertical movement
+        if(moveSpeed.y > 0){
+            _anim.SetBool("isMovingUp", true);
+        }else{
+            _anim.SetBool("isMovingUp", false);
+        }
+
+        if(moveSpeed.y < 0){
+            _anim.SetBool("isMovingDown", true);
+        }else{
+            _anim.SetBool("isMovingDown", false);
+        }                  
+    }
 
 
 
