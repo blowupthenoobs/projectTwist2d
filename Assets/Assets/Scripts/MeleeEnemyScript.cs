@@ -12,15 +12,21 @@ public class MeleeEnemyScript : MonoBehaviour
     //Targeting variables
     public float attackRange;
     public float visionDistance;
-    public bool targetNearby;
+    public float closingDistance;
+    private bool targetNearby;
     private Transform target;
     public LayerMask playerLayer;
 
     //Attack Variables
+    public float cooldown;
     private float currentCooldown;
     public float attackCooldown;
-    private bool isAttacking;
     public int damage;
+    public float attackLength;
+    public float attackSpeed;
+    public GameObject firingPosition;
+    public GameObject Aimer;
+    public GameObject bullet;
 
 
     void Awake()
@@ -31,22 +37,24 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         Move();
         CheckforPlayer();
-
+        AttackCooldown();
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Hurt(int takenDamage)
     {
-        
+        hp-=takenDamage;
     }
 
     // Update is called once per frame
     void Update()
     {
         target=GameObject.FindWithTag("Player").transform;
+
         if(hp<=0)
         {
             Destroy(gameObject);
         }
+
     }
 
     //Move Script
@@ -54,26 +62,39 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         if(targetNearby)
         {
-            if(Vector2.Distance(transform.position, target.position) > attackRange)
+            if(Vector2.Distance(transform.position, target.position) > closingDistance)
             {
-                isAttacking=false;
                 transform.position=Vector2.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
             }
-            else
+            if(Vector2.Distance(transform.position, target.position) < attackRange)
             {
-                isAttacking=true;
+                Attack();
             }
         }
-        else
-        {
+        
+        
+    }
 
+    private void Attack()
+    {
+        if(currentCooldown>=cooldown)
+        {
+            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, Aimer.transform.rotation);
+            projectile.GetComponent<EnemyMeleeProjectileScript>().SetStats(damage, attackLength, attackSpeed);
+            currentCooldown=0;
         }
     }
 
+    private void AttackCooldown()
+    {
+        if(currentCooldown<cooldown)
+            currentCooldown+=Time.fixedDeltaTime;
+    }
+
     public void Flip()
-        {
-            transform.Rotate(0f, 180f, 0f);
-        }
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
 
     private void CheckforPlayer()
     {

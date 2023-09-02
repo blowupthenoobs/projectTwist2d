@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
+    public GameObject bullet;
+    public GameObject firingPosition;
+    public float cooldown;
+    private float currentCooldown;
+
+    //Bullet Stats
+    public int damage;
+    public float bulletLife;
+    public float bulletSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +21,42 @@ public class GunScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        FaceMouse();
+        CheckInputs();
+        Reload();
+    }
+
+    private void CheckInputs()
+    {
+        if(Input.GetAxisRaw("Fire1")!=0)
+            Fire();
+    }
+
+    private void Fire()
+    {
+        if(currentCooldown>=cooldown)
+        {
+            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
+            projectile.GetComponent<PlayerBulletScript>().SetStats(damage, bulletLife, bulletSpeed);
+            currentCooldown=0;
+        }
+    }
+
+    private void Reload()
+    {
+        if(currentCooldown<cooldown)
+            currentCooldown+=Time.fixedDeltaTime;
+    }
+
+    private void FaceMouse()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition=Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+        transform.up = direction;
     }
 }

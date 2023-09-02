@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private Vector2 moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    public int maxhp;
+    public int hp;
 
     [Header("Animations")]
     public Animator _anim;
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();        
+        hp=maxhp;
     }
 
     void Update(){
@@ -33,7 +36,9 @@ public class Player : MonoBehaviour
     {
        moveAndRotate();
     }
-    
+
+
+
     private void moveAndRotate() //does not rotate yet
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -86,6 +91,13 @@ public class Player : MonoBehaviour
     private void rotateController()
     {
 	
+    }
+
+    public void Hurt(int damage)
+    {
+        hp-=damage;
+        if(hp<=0)
+            Debug.Log("You're dead");
     }
 
 
