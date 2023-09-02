@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BegginingMenu.unity
     guid: 725ae972eadfe74488cd0080a123d1ea
-  - enabled: 1
-    path: Assets/Scenes/InsideHouse.unity
-    guid: d25115606608e1549b7cd92eec7a9913
   m_configObjects: {}
