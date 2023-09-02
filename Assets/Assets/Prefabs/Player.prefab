@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 33ae1853d6bed7a46b3e9e8382194199, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6959549105847742436
@@ -104,6 +104,7 @@ MonoBehaviour:
   damage: 1
   bulletLife: 1.5
   bulletSpeed: 0.25
+  currentGun: {fileID: 3638979876916633510, guid: 101696634d7e14e4da6fa479a957b77f, type: 3}
 --- !u!1 &3068325788774579565
 GameObject:
   m_ObjectHideFlags: 0

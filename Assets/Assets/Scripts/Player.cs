@@ -205,8 +205,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void getMouseposition()
-    {
-
-    }
 }

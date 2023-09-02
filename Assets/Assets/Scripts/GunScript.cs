@@ -14,6 +14,8 @@ public class GunScript : MonoBehaviour
     public float bulletLife;
     public float bulletSpeed;
 
+    public weaponHandler currentGun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class GunScript : MonoBehaviour
     }
     private void Update()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = currentGun.gunSpirte;
         transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
@@ -41,11 +44,14 @@ public class GunScript : MonoBehaviour
 
     private void Fire()
     {
-        if(currentCooldown>=cooldown)
+        if (currentGun.canShoot)
         {
-            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
-            projectile.GetComponent<PlayerBulletScript>().SetStats(damage, bulletLife, bulletSpeed);
-            currentCooldown=0;
+            if (currentCooldown >= cooldown)
+            {
+                GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
+                projectile.GetComponent<PlayerBulletScript>().SetStats(damage, bulletLife, bulletSpeed);
+                currentCooldown = 0;
+            }
         }
     }
 

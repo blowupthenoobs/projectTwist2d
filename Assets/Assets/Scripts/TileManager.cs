@@ -15,6 +15,9 @@ public class TileManager : MonoBehaviour
     Vector3Int cellPosition;
     bool tileConfirmed = false;
     bool isInteracting = false;
+
+    public GameObject playerGun;
+
     void Start()
     {
         
@@ -23,13 +26,18 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInteracting)
+        if (playerGun.GetComponent<GunScript>().currentGun.canPlant == true)
         {
-            if (Input.GetMouseButtonDown(0))
+
+
+            if (isInteracting)
             {
-                SetInteracted((Vector3Int)cellPosition);
-                tileConfirmed = true;
-                isInteracting=false;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    SetInteracted((Vector3Int)cellPosition);
+                    tileConfirmed = true;
+                    isInteracting = false;
+                }
             }
         }
     }
@@ -82,7 +90,7 @@ public class TileManager : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "Growing")
+        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "tile_0029")
         {
             SetInteractedHidden((Vector3Int)cellPosition);
 
