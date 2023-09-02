@@ -19,10 +19,15 @@ public class GunScript : MonoBehaviour
     {
         
     }
+    private void Update()
+    {
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+         
         FaceMouse();
         CheckInputs();
         Reload();

@@ -8,7 +8,6 @@ public class StartMenuManager : MonoBehaviour
     public Button button;
     void Start()
     {
-        button.onClick.AddListener(updateScene);
     }
 
     // Update is called once per frame
@@ -20,8 +19,8 @@ public class StartMenuManager : MonoBehaviour
 
     }
 
-    void updateScene()
+    public void updateScene()
     {
-       // SceneManager.LoadScene("SampleScene");
+       SceneManager.LoadScene("InsideHouse");
     }
 }
