@@ -34622,6 +34622,14 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3103148201921446128, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
+      propertyPath: attackSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3103148201921446128, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
+      propertyPath: attackLength
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.67

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hp=maxhp;
     }
 
 
@@ -60,6 +61,8 @@ public class Player : MonoBehaviour
     public void Hurt(int damage)
     {
         hp-=damage;
+        if(hp<=0)
+            Debug.Log("You're dead");
     }
 
 

@@ -24,6 +24,7 @@ public class MeleeEnemyScript : MonoBehaviour
     public float attackLength;
     public float attackSpeed;
     public GameObject firingPosition;
+    public GameObject Aimer;
     public GameObject bullet;
 
 
@@ -81,7 +82,7 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         if(currentCooldown>=cooldown)
         {
-            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
+            GameObject projectile = Instantiate(bullet, firingPosition.transform.position, Aimer.transform.rotation);
             projectile.GetComponent<EnemyMeleeProjectileScript>().SetStats(damage, attackLength, attackSpeed);
             currentCooldown=0;
         }
