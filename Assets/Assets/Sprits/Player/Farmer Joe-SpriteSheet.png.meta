@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 181c0b6756a5c2e4eaa81d562df1172e
-      internalID: 779101564
+      spriteID: 3647402e290e7344f95bd3fd6a339861
+      internalID: 1946837520
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bc0a65dc522bdc4c83e027920d7fdc8
-      internalID: -1958721543
+      spriteID: 314018a588bbfac4e9ba2294d8609dea
+      internalID: -861963516
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24f7c14a358f60946a9050e8f6162ebb
-      internalID: 486635224
+      spriteID: 028e339a4eaf6f541b9f833b89d08d08
+      internalID: 409176857
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea7a88b54678a764a95311948624b91e
-      internalID: -845000
+      spriteID: 419c8b1572cbc6a4981dff0541384426
+      internalID: -1832967838
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5276e35ebee8c2d40b5b1367f887a1d3
-      internalID: 419059077
+      spriteID: 77b7f0fdc8ed9d24f8178dda4b4fe6e6
+      internalID: -655692560
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0bf460dceaae4e4c880cbf7aaf2d57e
-      internalID: 576947721
+      spriteID: 42331cd906250084faeb1175a34e7dbf
+      internalID: 142841013
       vertices: []
       indices: 
       edges: []
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8248007a3dd9f2948a9eb57627242843
-      internalID: -1474581959
+      spriteID: a85d7c61a3d95bf47827db8988736c64
+      internalID: 1346712283
       vertices: []
       indices: 
       edges: []
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f9add2bce7df2a4690412f9919c5622
-      internalID: 1982220382
+      spriteID: 574c0646e1e754f438c85b5e86efc371
+      internalID: -122705592
       vertices: []
       indices: 
       edges: []
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deeaf245982d3f645b176f9bd384582c
-      internalID: -769858932
+      spriteID: 4b083a017c0b35b46832dd83baafe0dc
+      internalID: 2101254822
       vertices: []
       indices: 
       edges: []
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43366b788c33abb4ab58dada4749e029
-      internalID: -1623503494
+      spriteID: 946d25a43cec463498aa9b3a9814b87e
+      internalID: 1983798914
       vertices: []
       indices: 
       edges: []
@@ -334,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 570632d9ffe24ef4b8201c2e38c3523c
-      internalID: -285895014
+      spriteID: c87abcdbc99d44247b8027b342483213
+      internalID: -184216465
       vertices: []
       indices: 
       edges: []
@@ -351,17 +351,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Farmer Joe-SpriteSheet_0: 779101564
-      Farmer Joe-SpriteSheet_1: -1958721543
-      Farmer Joe-SpriteSheet_10: -285895014
-      Farmer Joe-SpriteSheet_2: 486635224
-      Farmer Joe-SpriteSheet_3: -845000
-      Farmer Joe-SpriteSheet_4: 419059077
-      Farmer Joe-SpriteSheet_5: 576947721
-      Farmer Joe-SpriteSheet_6: -1474581959
-      Farmer Joe-SpriteSheet_7: 1982220382
-      Farmer Joe-SpriteSheet_8: -769858932
-      Farmer Joe-SpriteSheet_9: -1623503494
+      Farmer Joe-SpriteSheet_0: 1946837520
+      Farmer Joe-SpriteSheet_1: -861963516
+      Farmer Joe-SpriteSheet_10: -184216465
+      Farmer Joe-SpriteSheet_2: 409176857
+      Farmer Joe-SpriteSheet_3: -1832967838
+      Farmer Joe-SpriteSheet_4: -655692560
+      Farmer Joe-SpriteSheet_5: 142841013
+      Farmer Joe-SpriteSheet_6: 1346712283
+      Farmer Joe-SpriteSheet_7: -122705592
+      Farmer Joe-SpriteSheet_8: 2101254822
+      Farmer Joe-SpriteSheet_9: 1983798914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
