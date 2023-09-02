@@ -10,6 +10,7 @@ public class EnemyMeleeProjectileScript : MonoBehaviour
     public float lifeTime;
     private float lifeCountdown=0;
     public int damage;
+    private bool hurt=false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,11 +37,11 @@ public class EnemyMeleeProjectileScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag=="Player")
+        if(other.gameObject.tag=="Player" && !hurt)
         {
             other.gameObject.SendMessage("Hurt", damage);
+            hurt=true;
         }
 
-        Destroy(gameObject);
     }
 }

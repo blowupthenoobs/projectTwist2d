@@ -164,15 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 5
   moveSpeed: 3
-  attackRange: 2
+  attackRange: 5
   visionDistance: 10
+  closingDistance: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  cooldown: 0
+  cooldown: 0.5
   attackCooldown: 3
   damage: 2
-  attackLength: 0.05
+  attackLength: 0.01
   attackSpeed: 10
   firingPosition: {fileID: 5307384780977930707}
   Aimer: {fileID: 4471703969798570732}

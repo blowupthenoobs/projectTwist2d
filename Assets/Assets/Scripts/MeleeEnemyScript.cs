@@ -12,6 +12,7 @@ public class MeleeEnemyScript : MonoBehaviour
     //Targeting variables
     public float attackRange;
     public float visionDistance;
+    public float closingDistance;
     private bool targetNearby;
     private Transform target;
     public LayerMask playerLayer;
@@ -61,21 +62,17 @@ public class MeleeEnemyScript : MonoBehaviour
     {
         if(targetNearby)
         {
-            // transform.LookAt(target);
-
-            if(Vector2.Distance(transform.position, target.position) > attackRange)
+            if(Vector2.Distance(transform.position, target.position) > closingDistance)
             {
                 transform.position=Vector2.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
             }
-            else
+            if(Vector2.Distance(transform.position, target.position) < attackRange)
             {
                 Attack();
             }
         }
-        else
-        {
-
-        }
+        
+        
     }
 
     private void Attack()
