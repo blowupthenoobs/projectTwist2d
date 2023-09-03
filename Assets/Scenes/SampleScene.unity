@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &76984831
 Transform:
   m_ObjectHideFlags: 0
@@ -752,6 +752,7 @@ MonoBehaviour:
   minDistanceFromPlayer: 3
   Index: 0
   spawnTime: 10
+  cooldown: 0
   maxMonsterSpawn: 5
 --- !u!1 &83286661
 GameObject:
@@ -42028,8 +42029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 99609593}
   smoothing: 0.1
-  maxPos: {x: 16.25, y: 5.6}
-  minPos: {x: -17, y: -20.6}
+  maxPos: {x: 18, y: 7.58}
+  minPos: {x: -18.9, y: -22.6}
 --- !u!1 &525892772
 GameObject:
   m_ObjectHideFlags: 0
@@ -60342,11 +60343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991141207180545051, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 7991141207180545051, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.067
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7991141207180545051, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_LocalPosition.z
