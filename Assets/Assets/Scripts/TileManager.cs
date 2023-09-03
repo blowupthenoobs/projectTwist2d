@@ -40,7 +40,7 @@ public class TileManager : MonoBehaviour
                 }
                 else if(IsFlower(cellPosition))
                 {
-                    Debug.Log("You got money... but it's not implemented yet");
+                    GameManager.Instance.GainMoney();
                     SetInteracted((Vector3Int)cellPosition);
                 }
             }

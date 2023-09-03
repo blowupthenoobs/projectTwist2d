@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
    public TileManager TileManager;
    public GameObject DeathScreen;
+   public TMP_Text MoneyText;
+   public int money;
     void Start()
     {
         TileManager = GetComponent<TileManager>();
@@ -25,7 +28,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MoneyText.text = money.ToString();
+    }
+
+    public void GainMoney()
+    {
+        money++;
     }
 
     public void Die()
