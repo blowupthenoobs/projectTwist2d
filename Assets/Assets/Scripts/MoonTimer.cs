@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MoonTimer : MonoBehaviour
 {
+    public GameObject DayScreen;
+    public GameObject NightScreen;
     public float timeUntilNextNightCycle;
     public Slider moonSlider;
     void Start()
@@ -23,7 +25,7 @@ public class MoonTimer : MonoBehaviour
     private void manageSlider()
     {
         moonSlider.value = (Time.time)/timeUntilNextNightCycle;
-        if (moonSlider.value >= 60)
+        if (moonSlider.value >=1)
         {
             startNightTransition();
         }
@@ -31,7 +33,8 @@ public class MoonTimer : MonoBehaviour
 
     private void startNightTransition()
     {
-        throw new NotImplementedException();
+        DayScreen.SetActive(false);
+        NightScreen.SetActive(true);
     }
 
  

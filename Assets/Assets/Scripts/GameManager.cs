@@ -31,5 +31,6 @@ public class GameManager : MonoBehaviour
     public void Die()
     {
         DeathScreen.SetActive(true);
+        Time.timeScale=0f;
     }
 }
