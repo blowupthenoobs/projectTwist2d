@@ -53,6 +53,10 @@ public class MeleeEnemyScript : MonoBehaviour
 
         if(hp<=0)
         {
+            int i=Random.Range(0, 4);
+
+            if(i==3)
+                GameManager.Instance.seeds++;
             Destroy(gameObject);
         }
 

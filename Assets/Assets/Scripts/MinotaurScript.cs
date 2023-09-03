@@ -57,6 +57,11 @@ public class MinotaurScript : MonoBehaviour
 
         if(hp<=0)
         {
+            int i=Random.Range(0, 2);
+
+            if(i==1)
+                GameManager.Instance.seeds++;
+            
             Destroy(gameObject);
         }
 

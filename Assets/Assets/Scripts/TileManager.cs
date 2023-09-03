@@ -32,8 +32,9 @@ public class TileManager : MonoBehaviour
         
             if(Input.GetMouseButtonDown(0) && MoonTimer.Instance.isday)
             {
-                if (isInteracting)
+                if (isInteracting  && GameManager.Instance.seeds>0)
                 {
+                    GameManager.Instance.seeds-=1;
                     SetInteracted((Vector3Int)cellPosition);
                     tileConfirmed = true;
                     isInteracting=false;

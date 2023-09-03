@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
    public TileManager TileManager;
    public GameObject DeathScreen;
    public TMP_Text MoneyText;
+   public int seeds;
    public int money;
     void Start()
     {
@@ -34,6 +35,26 @@ public class GameManager : MonoBehaviour
     public void GainMoney()
     {
         money++;
+    }
+
+    public void UseSeed()
+    {
+        seeds-=1;
+    }
+
+    public void BuySeed()
+    {
+        if(money>=3)
+        {
+            money-=3;
+            GainSeed(5);
+        }
+        
+    }
+
+    public void GainSeed(int amount)
+    {
+        seeds+=amount;
     }
 
     public void Die()
