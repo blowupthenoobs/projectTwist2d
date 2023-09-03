@@ -10,6 +10,7 @@ public class MoonTimer : MonoBehaviour
     public GameObject NightScreen;
     public GameObject moonIcon;
     public GameObject sunIcon;
+    public GameObject healthBar;
     public float TimeinDay;
     private float elapsedTime;
     private float startTime;
@@ -58,6 +59,7 @@ public class MoonTimer : MonoBehaviour
         NightScreen.SetActive(true);
         moonIcon.SetActive(true);
         sunIcon.SetActive(false);
+        healthBar.SetActive(true);
         FillArea.color = nightBarColor;
         isday=false;
     }
@@ -67,6 +69,7 @@ public class MoonTimer : MonoBehaviour
         NightScreen.SetActive(false);
         moonIcon.SetActive(false);
         sunIcon.SetActive(true);
+        healthBar.SetActive(false);
         FillArea.color = dayBarColor;
         isday=true;
     }
