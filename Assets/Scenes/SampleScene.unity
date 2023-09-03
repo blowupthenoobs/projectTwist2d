@@ -42838,6 +42838,7 @@ MonoBehaviour:
   smoothing: 0.1
   maxPos: {x: 19.5, y: 7.58}
   minPos: {x: -22.3, y: -22.6}
+  Sniper: {fileID: 0}
   ScopePoint: {fileID: 139881090}
   Scoping: 0
   scopeSmooth: 0.5
@@ -55873,7 +55874,6 @@ GameObject:
   m_Component:
   - component: {fileID: 745243599}
   - component: {fileID: 745243601}
-  - component: {fileID: 745243600}
   - component: {fileID: 745243602}
   m_Layer: 3
   m_Name: Sniper
@@ -55881,7 +55881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &745243599
 Transform:
   m_ObjectHideFlags: 0
@@ -55899,26 +55899,6 @@ Transform:
   - {fileID: 139881090}
   m_Father: {fileID: 70069352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &745243600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745243598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c63f13d2b2b6af468ec3deaf3b1e882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8332274965234516323, guid: c434a1777c5e3e5498cdcccf7048df98, type: 3}
-  firingPosition: {fileID: 59468186}
-  cooldown: 0.2
-  damage: 1
-  bulletLife: 1.5
-  bulletSpeed: 0.25
-  damageIncrease: 1
-  cooldownUpgrade: 0.05
 --- !u!212 &745243601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55989,7 +55969,7 @@ MonoBehaviour:
   cooldown: 3
   damage: 5
   bulletLife: 3
-  bulletSpeed: 10
+  bulletSpeed: 30
   damageIncrease: 1
   cooldownUpgrade: 0.5
 --- !u!1 &751021066
@@ -111682,7 +111662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1812718595991896110, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2315398545389706195, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -111704,6 +111684,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4330660577619450313, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638219447412546278, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+      propertyPath: Sniper
+      value: 
+      objectReference: {fileID: 745243598}
     - target: {fileID: 5638219447412546278, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: ShotGun
       value: 
