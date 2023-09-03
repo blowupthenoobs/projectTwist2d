@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
    public TileManager TileManager;
    public GameObject DeathScreen;
    public TMP_Text MoneyText;
+   public TMP_Text SeedText;
    public int seeds;
    public int money;
     void Start()
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         MoneyText.text = money.ToString();
+        SeedText.text = seeds.ToString();
     }
 
     public void GainMoney()
