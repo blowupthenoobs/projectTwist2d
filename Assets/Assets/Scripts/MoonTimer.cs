@@ -14,7 +14,11 @@ public class MoonTimer : MonoBehaviour
     private float elapsedTime;
     private float startTime;
     public Slider timeSlider;
-    public bool isday=false;
+    public Image FillArea;
+    public Color dayBarColor;
+    public Color nightBarColor;
+    private bool isday=true;
+
     void Start()
     {
         
@@ -53,6 +57,7 @@ public class MoonTimer : MonoBehaviour
         NightScreen.SetActive(true);
         moonIcon.SetActive(true);
         sunIcon.SetActive(false);
+        FillArea.color = nightBarColor;
         isday=false;
     }
     private void startDayTransition()
@@ -61,6 +66,7 @@ public class MoonTimer : MonoBehaviour
         NightScreen.SetActive(false);
         moonIcon.SetActive(false);
         sunIcon.SetActive(true);
+        FillArea.color = dayBarColor;
         isday=true;
     }
 
