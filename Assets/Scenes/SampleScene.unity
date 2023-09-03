@@ -38440,7 +38440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362, y: 298}
+  m_AnchoredPosition: {x: 691, y: 465}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443432790
@@ -107740,9 +107740,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c720b2aa869f04c46aa88e5f9674301b, type: 2}
-  m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  m_TileSpriteArray: []
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -108749,7 +108747,7 @@ MonoBehaviour:
   NightScreen: {fileID: 691575216}
   moonIcon: {fileID: 1380482707}
   sunIcon: {fileID: 334862660}
-  TimeinDay: 5
+  TimeinDay: 45
   timeSlider: {fileID: 443432790}
   FillArea: {fileID: 481968141}
   dayBarColor: {r: 1, g: 0.8509804, b: 0.28235295, a: 0}
