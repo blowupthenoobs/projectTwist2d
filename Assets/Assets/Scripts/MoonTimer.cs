@@ -21,7 +21,8 @@ public class MoonTimer : MonoBehaviour
 
     void Start()
     {
-        
+        dayBarColor.a=1f;
+        nightBarColor.a=1f;
     }
 
     // Update is called once per frame
