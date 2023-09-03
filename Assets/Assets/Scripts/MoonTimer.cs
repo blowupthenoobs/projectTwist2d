@@ -8,8 +8,11 @@ public class MoonTimer : MonoBehaviour
 {
     public GameObject DayScreen;
     public GameObject NightScreen;
-    public float timeUntilNextNightCycle;
-    public Slider moonSlider;
+    public float TimeinDay;
+    private float elapsedTime;
+    private float startTime;
+    public Slider timeSlider;
+    public bool isday;
     void Start()
     {
         
@@ -18,23 +21,41 @@ public class MoonTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        elapsedTime = Time.time-startTime;
         manageSlider();
     }
 
     private void manageSlider()
     {
-        moonSlider.value = (Time.time)/timeUntilNextNightCycle;
-        if (moonSlider.value >=1)
+        if(elapsedTime>=TimeinDay)
         {
-            startNightTransition();
+            startTime=Time.time;
+            timeSlider.value=0f;
+
+            if(!isday)
+            {
+                startDayTransition();
+            }
+            else
+            {
+                startNightTransition();
+            }
         }
+
+        timeSlider.value = elapsedTime/TimeinDay;
     }
 
     private void startNightTransition()
     {
         DayScreen.SetActive(false);
         NightScreen.SetActive(true);
+        isday=false;
+    }
+    private void startDayTransition()
+    {
+        DayScreen.SetActive(true);
+        NightScreen.SetActive(false);
+        isday=true;
     }
 
  
