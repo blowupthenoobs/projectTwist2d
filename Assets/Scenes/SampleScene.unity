@@ -69480,7 +69480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1380482708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -108641,8 +108641,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DayScreen: {fileID: 208428255}
   NightScreen: {fileID: 691575216}
-  TimeinDay: 0
-  timeSlider: {fileID: 0}
+  moonIcon: {fileID: 1380482707}
+  sunIcon: {fileID: 334862660}
+  TimeinDay: 5
+  timeSlider: {fileID: 443432790}
   isday: 0
 --- !u!114 &2053833015
 MonoBehaviour:
