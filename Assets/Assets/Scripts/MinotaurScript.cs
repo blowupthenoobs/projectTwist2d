@@ -22,10 +22,12 @@ public class MinotaurScript : MonoBehaviour
     private float currentCooldown;
     public float attackCooldown;
     public int damage;
-    private bool Attacking=false;
+    private bool Attacking;
+    private bool ramming;
     public float attackLength;
     private float currentRunTime;
     public float attackSpeed;
+    public float chargeTime;
     public GameObject firingPosition;
     public GameObject Aimer;
 
@@ -36,7 +38,6 @@ public class MinotaurScript : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Debug.Log(Attacking);
         Move();
         CheckforPlayer();
         AttackCooldown();
@@ -63,11 +64,12 @@ public class MinotaurScript : MonoBehaviour
     //Move Script
     private void Move()
     {
-        // if(!Attacking)
-        // {
+
+        if(!Attacking)
+        {
             if(targetNearby)
             {
-                Debug.Log("moving");
+                
                 if(Vector2.Distance(transform.position, target.position) > closingDistance)
                 {
                     transform.position=Vector2.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
@@ -75,27 +77,25 @@ public class MinotaurScript : MonoBehaviour
 
                 if(Vector2.Distance(transform.position, target.position) < attackRange)
                 {
-                    Debug.Log("attacked");
                     Attack();
                 }
             }
-        // }
-        // else
-        // {
-        //     if(currentRunTime<attackLength)
-        //     {
-        //         Debug.Log("ramming");
-        //         transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
-        //         currentRunTime+=Time.fixedDeltaTime;
-        //     }
-        //     else
-        //     {
-        //         Debug.Log("stopped running");
-        //         Aimer.SendMessage("UnFreeze");
-        //         Attacking=false;
-        //         currentRunTime = 0;
-        //     }
-        // }
+        }
+        else
+        {
+            if(currentRunTime<attackLength)
+            {
+                transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
+                currentRunTime+=Time.fixedDeltaTime;
+            }
+            else
+            {
+                ramming=false;
+                Aimer.SendMessage("UnFreeze");
+                Attacking=false;
+                currentRunTime = 0;
+            }
+        }
         
         
         
@@ -105,12 +105,12 @@ public class MinotaurScript : MonoBehaviour
     {
         if(Attacking)
         {
-            Debug.Log("hit something");
-            if(other.gameObject.tag=="Enemy")
+            if(other.gameObject.tag=="Player")
             {
                 other.gameObject.SendMessage("Hurt", damage);
             }
 
+            ramming=false;
             Aimer.SendMessage("UnFreeze");
             Attacking=false;
             currentRunTime = 0;
@@ -120,13 +120,20 @@ public class MinotaurScript : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Started Attacking");
         if(currentCooldown>=cooldown)
         {
             Aimer.SendMessage("Freeze");
             Attacking=true;
+            StartCoroutine(Ram());
             currentCooldown=0;
         }
+            
+    }
+
+    private IEnumerator Ram()
+    {
+        yield return new WaitForSeconds(chargeTime);
+        ramming=true;
     }
 
     private void AttackCooldown()
@@ -142,14 +149,17 @@ public class MinotaurScript : MonoBehaviour
 
     private void CheckforPlayer()
     {
-        targetNearby=Physics2D.OverlapCircle(transform.position, visionDistance, playerLayer);
+        if(Vector2.Distance(transform.position, target.position) < visionDistance)
+            targetNearby=true;
+        else
+            targetNearby=false;
     }
 
-    // private void CheckforDay()
-    // {
-    //     if(MoonTimer.Instance.isday)
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+    private void CheckforDay()
+    {
+        if(MoonTimer.Instance.isday)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

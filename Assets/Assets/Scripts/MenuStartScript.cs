@@ -11,6 +11,7 @@ public class MenuStartScript : MonoBehaviour
     // public TMP_Text StartGame;
     public void BeginGame()
     {
+        
         SceneManager.LoadScene("SampleScene");
     }
 
