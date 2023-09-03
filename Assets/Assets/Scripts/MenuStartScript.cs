@@ -11,19 +11,8 @@ public class MenuStartScript : MonoBehaviour
     // public TMP_Text StartGame;
     public void BeginGame()
     {
-        
         SceneManager.LoadScene("SampleScene");
     }
-
-    // public void OnPointerEnter(PointerEventData eventData)
-    // {
-    //     StartGame.color = Color.green;
-    // }
-
-    // public void OnPointerExit(PointerEventData eventData)
-    // {
-    //     StartGame.color = Color.black;
-    // }
 
         
     
