@@ -41,7 +41,7 @@ public class TileManager : MonoBehaviour
         TileBase tile = interactableMap.GetTile(position);
         if(tile != null)
         {
-            if(tile.name == "Interactable")
+            if(tile.name == "Mound_0")
             {
                 return true;
             }
@@ -82,7 +82,7 @@ public class TileManager : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "Growing")
+        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "PlantStage1")
         {
             SetInteractedHidden((Vector3Int)cellPosition);
 

@@ -37641,7 +37641,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.8117648, g: 0.5058824, b: 0.32941177, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -39, y: -35, z: 0}
   m_Size: {x: 82, y: 54, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -43539,7 +43539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableMap: {fileID: 588515871}
   hiddenIteractableTile: {fileID: 11400000, guid: 65be26795b1f37946b2836f5f4f79011, type: 2}
-  interactedTile: {fileID: 11400000, guid: febc6744bf242764581dacbbf33e8a60, type: 2}
+  interactedTile: {fileID: 11400000, guid: ab4440d98ff30454498c148552c8e183, type: 2}
   potentiolTile: {fileID: 11400000, guid: 934d61b3141cfd84fbf6a71a56927997, type: 2}
   grid: {fileID: 56006678}
 --- !u!1 &597508452
