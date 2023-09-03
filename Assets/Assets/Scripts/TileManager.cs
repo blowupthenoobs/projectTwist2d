@@ -15,6 +15,9 @@ public class TileManager : MonoBehaviour
     Vector3Int cellPosition;
     bool tileConfirmed = false;
     bool isInteracting = false;
+
+    public List<object> GridData = new List<object>(); //First is the position, then the growth stage
+
     void Start()
     {
         
@@ -32,6 +35,14 @@ public class TileManager : MonoBehaviour
                 isInteracting=false;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            for(int i=0; i<GridData.Count; i++)
+            {
+                Debug.Log(GridData[i]);
+            }
+        }
     }
 
 
@@ -47,7 +58,7 @@ public class TileManager : MonoBehaviour
             }
         }
         return false;
-    
+
     }
 
 
@@ -91,7 +102,16 @@ public class TileManager : MonoBehaviour
         else
         {
             tileConfirmed = false;
+
+
+            GridData.Insert(0, 0);
+            GridData.Insert(0, cellPosition);
         }
 
+    }
+
+    public void NewDay()
+    {
+        Debug.Log("Detected a new Day");
     }
 }
