@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAimOrbitScript : MonoBehaviour
 {
     private Transform target;
+    private bool frozen = false;
     void Awake()
     {
         
@@ -12,8 +13,22 @@ public class EnemyAimOrbitScript : MonoBehaviour
 
     void Update()
     {
-        target=GameObject.FindWithTag("Player").transform;
-        Vector2 directionToPlayer=(target.transform.position - transform.position).normalized;
-        transform.up=directionToPlayer;
+        if(!frozen)
+        {
+            target=GameObject.FindWithTag("Player").transform;
+            Vector2 directionToPlayer=(target.transform.position - transform.position).normalized;
+            transform.up=directionToPlayer;
+        }
+        
+    }
+
+    public void Freeze()
+    {
+        frozen=true;
+    }
+
+    public void UnFreeze()
+    {
+        frozen=false;
     }
 }
