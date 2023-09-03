@@ -6,6 +6,7 @@ public class GunOrbitScript : MonoBehaviour
 {
     public GameObject NormalGun;
     public GameObject ShotGun;
+    public bool shotgunIsBought;
 
     void Start()
     {
@@ -34,15 +35,31 @@ public class GunOrbitScript : MonoBehaviour
 
     private void SwitchWeapons()
     {
-        if(NormalGun.activeInHierarchy)
+        if(shotgunIsBought)
         {
-            NormalGun.SetActive(false);
-            ShotGun.SetActive(true);
+            if(NormalGun.activeInHierarchy)
+            {
+                NormalGun.SetActive(false);
+                ShotGun.SetActive(true);
+            }
+            else if(ShotGun.activeInHierarchy)
+            {
+                NormalGun.SetActive(true);
+                ShotGun.SetActive(false);
+            }
         }
-        else if(ShotGun.activeInHierarchy)
+        
+    }
+
+    public void BuyWeapon()
+    {
+        if(GameManager.Instance.money>=15)
         {
-            NormalGun.SetActive(true);
-            ShotGun.SetActive(false);
+            if(!shotgunIsBought)
+            {
+                GameManager.Instance.money-=15;
+                shotgunIsBought=true;
+            }
         }
     }
 }
