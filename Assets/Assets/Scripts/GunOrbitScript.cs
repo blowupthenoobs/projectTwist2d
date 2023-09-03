@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GunOrbitScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject NormalGun;
+    public GameObject ShotGun;
+
     void Start()
     {
         
@@ -14,6 +16,10 @@ public class GunOrbitScript : MonoBehaviour
     void FixedUpdate()
     {
         FaceMouse();
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            SwitchWeapons();
+        }
     }
 
     private void FaceMouse()
@@ -24,5 +30,19 @@ public class GunOrbitScript : MonoBehaviour
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
         transform.up = direction;
+    }
+
+    private void SwitchWeapons()
+    {
+        if(NormalGun.activeInHierarchy)
+        {
+            NormalGun.SetActive(false);
+            ShotGun.SetActive(true);
+        }
+        else if(ShotGun.activeInHierarchy)
+        {
+            NormalGun.SetActive(true);
+            ShotGun.SetActive(false);
+        }
     }
 }
