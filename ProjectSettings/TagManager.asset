@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Projectile
+  - Mushroom
   layers:
   - Default
   - TransparentFX

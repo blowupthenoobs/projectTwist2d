@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float maxhp;
     public float hp;
     public float healthUpgrade;
+    public float healAmountPercent = .25f;
 
     public GameObject[] gun;
 
@@ -61,8 +62,8 @@ public class Player : MonoBehaviour
 
     }
 
-    void AnimationStateChange(){
-        //horizontal movement
+    void AnimationStateChange(){ 
+        // horizontal movement
         if(moveSpeed.x < 0){
             transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
         }else if(moveSpeed.x > 0){
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour
             _anim.SetBool("isMovingDown", true);
         }else{
             _anim.SetBool("isMovingDown", false);
-        }                  
+        }            
     }
 
 
@@ -217,6 +218,17 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    public void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Mushroom"){
+            if(hp > maxhp){
+                hp += hp * healAmountPercent;
+                if(hp >= maxhp){
+                    hp = maxhp;
+                }
+            }
+        }
     }
 
     public void UpgradeDamage()

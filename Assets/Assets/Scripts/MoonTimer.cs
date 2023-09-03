@@ -15,6 +15,7 @@ public class MoonTimer : MonoBehaviour
     public GameObject healthBar;
     public GameObject gun;
     public GameObject TileManager;
+    public Animator playerAnimator;
     public float TimeinDay;
     private float elapsedTime;
     private float startTime;
@@ -75,6 +76,7 @@ public class MoonTimer : MonoBehaviour
         gun.SetActive(true);
         FillArea.color = nightBarColor;
         isday=false;
+        playerAnimator.SetBool("isNightTime", true);
     }
     private void startDayTransition()
     {
@@ -87,6 +89,7 @@ public class MoonTimer : MonoBehaviour
         FillArea.color = dayBarColor;
         TileManager.GetComponent<TileManager>().NewDay();
         isday=true;
+        playerAnimator.SetBool("isNightTime", false);
     }
 
  
