@@ -915,7 +915,7 @@ MonoBehaviour:
   Index: 0
   spawnTime: 10
   cooldown: 0
-  maxMonsterSpawn: 5
+  maxMonsterSpawn: 2
 --- !u!1 &83286661
 GameObject:
   m_ObjectHideFlags: 0
@@ -111259,6 +111259,7 @@ MonoBehaviour:
   healthBar: {fileID: 1206857046}
   gun: {fileID: 70069351}
   TileManager: {fileID: 588515868}
+  Spawner: {fileID: 76984830}
   playerAnimator: {fileID: 99609594}
   TimeinDay: 45
   timeSlider: {fileID: 443432790}

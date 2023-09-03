@@ -44,4 +44,9 @@ public class SpawnerScript : MonoBehaviour
         }
         
     }
+
+    public void IncreaseDifficulty()
+    {
+        maxMonsterSpawn+=3;
+    }
 }
