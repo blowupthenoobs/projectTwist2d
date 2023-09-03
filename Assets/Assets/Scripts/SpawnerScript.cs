@@ -33,7 +33,6 @@ public class SpawnerScript : MonoBehaviour
 
     private void SpawnMonsters(int x)
     {
-        Debug.Log("Was Called");
         for(int i=0; i<=x; i++)
         {
             Index=Random.Range(0,spawnLocations.Length);

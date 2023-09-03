@@ -10,6 +10,8 @@ public class TileManager : MonoBehaviour
     public Tilemap interactableMap;
     public Tile hiddenIteractableTile;
     public Tile interactedTile;
+    public Tile stage2;
+    public Tile stage3;
     public Tile potentiolTile;
     public Grid grid;
     Vector3Int cellPosition;
@@ -107,7 +109,7 @@ public class TileManager : MonoBehaviour
 
     public void NewDay()
     {
-        for(int i=0; i<GridData.Count; i+=3)
+        for(int i=0; i<GridLocations.Count; i++)
         {
             GridData[i+1]++;
 
@@ -122,6 +124,15 @@ public class TileManager : MonoBehaviour
                 Debug.Log("Growing Twice");
                 GridData[i+2]+=1;
                 GridData[i+1]=0;
+            }
+
+            if(GridData[i+2]==2)
+            {
+                interactableMap.SetTile(GridLocations[i], stage2);
+            }
+            else if(GridData[i+2]==3)
+            {
+                interactableMap.SetTile(GridLocations[i], stage3);
             }
         }
     }
