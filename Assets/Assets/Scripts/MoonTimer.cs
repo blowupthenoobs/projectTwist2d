@@ -14,7 +14,7 @@ public class MoonTimer : MonoBehaviour
     private float elapsedTime;
     private float startTime;
     public Slider timeSlider;
-    public bool isday;
+    public bool isday=false;
     void Start()
     {
         
