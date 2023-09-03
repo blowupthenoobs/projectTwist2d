@@ -29,15 +29,21 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInteracting)
-        {
-            if (Input.GetMouseButtonDown(0))
+        
+            if(Input.GetMouseButtonDown(0))
             {
-                SetInteracted((Vector3Int)cellPosition);
-                tileConfirmed = true;
-                isInteracting=false;
+                if (isInteracting)
+                {
+                    SetInteracted((Vector3Int)cellPosition);
+                    tileConfirmed = true;
+                    isInteracting=false;
+                }
+                else if(IsFlower(cellPosition))
+                {
+                    Debug.Log("You got money... but it's not implemented yet");
+                    SetInteracted((Vector3Int)cellPosition);
+                }
             }
-        }
     }
 
 
@@ -48,6 +54,20 @@ public class TileManager : MonoBehaviour
         if(tile != null)
         {
             if(tile.name == "Mound_0")
+            {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public bool IsFlower(Vector3Int position)
+    { 
+        TileBase tile = interactableMap.GetTile(position);
+        if(tile != null)
+        {
+            if(tile.name == "PlantStage3")
             {
                 return true;
             }
@@ -115,12 +135,10 @@ public class TileManager : MonoBehaviour
 
             if(GridData[i+2]==1 && GridData[i+1]==2)
             {
-                Debug.Log("Growing");
                 GridData[i+2]+=1;
             }
             else if(GridData[i+2]==2 && GridData[i+1]==5)
             {
-                Debug.Log("Growing Twice");
                 GridData[i+2]+=1;
             }
 

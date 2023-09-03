@@ -108873,7 +108873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4841132ced9c34941be1ef973533d5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileManager: {fileID: 0}
+  TileManager: {fileID: 588515874}
   DeathScreen: {fileID: 1534561432}
 --- !u!1 &2067611032
 GameObject:
