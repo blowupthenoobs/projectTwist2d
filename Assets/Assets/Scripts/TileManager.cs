@@ -88,7 +88,7 @@ public class TileManager : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "PlantStage1")
+        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "PlantStage1" && interactableMap.GetTile(cellPosition).name != "PlantStage2" && interactableMap.GetTile(cellPosition).name != "PlantStage3")
         {
             SetInteractedHidden((Vector3Int)cellPosition);
 
@@ -117,13 +117,11 @@ public class TileManager : MonoBehaviour
             {
                 Debug.Log("Growing");
                 GridData[i+2]+=1;
-                GridData[i+1]=0;
             }
-            else if(GridData[i+2]==2 && GridData[i+1]==3)
+            else if(GridData[i+2]==2 && GridData[i+1]==5)
             {
                 Debug.Log("Growing Twice");
                 GridData[i+2]+=1;
-                GridData[i+1]=0;
             }
 
             if(GridData[i+2]==2)
