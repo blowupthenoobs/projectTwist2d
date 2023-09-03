@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MoonTimer : MonoBehaviour
 {
+    public static MoonTimer Instance;
+
     public GameObject DayScreen;
     public GameObject NightScreen;
     public GameObject moonIcon;
@@ -19,12 +21,20 @@ public class MoonTimer : MonoBehaviour
     public Image FillArea;
     public Color dayBarColor;
     public Color nightBarColor;
-    private bool isday=true;
+    public bool isday=true;
 
     void Start()
     {
         dayBarColor.a=1f;
         nightBarColor.a=1f;
+    }
+
+    void Awake()
+    {
+        if(Instance==null)
+            Instance=this;
+        else
+            Destroy(gameObject);
     }
 
     // Update is called once per frame

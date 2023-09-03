@@ -38,6 +38,7 @@ public class MeleeEnemyScript : MonoBehaviour
         Move();
         CheckforPlayer();
         AttackCooldown();
+        CheckforDay();
     }
 
     private void Hurt(int takenDamage)
@@ -99,5 +100,13 @@ public class MeleeEnemyScript : MonoBehaviour
     private void CheckforPlayer()
     {
         targetNearby=Physics2D.OverlapCircle(transform.position, visionDistance, playerLayer);
+    }
+
+    private void CheckforDay()
+    {
+        if(MoonTimer.Instance.isday)
+        {
+            Destroy(gameObject);
+        }
     }
 }
