@@ -102,16 +102,17 @@ MonoBehaviour:
   hp: 7
   moveSpeed: 5
   attackRange: 7
-  visionDistance: 10
+  visionDistance: 12
   closingDistance: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
   cooldown: 0.5
-  attackCooldown: 0
+  attackCooldown: 2
   damage: 5
-  attackLength: 2
-  attackSpeed: 10
+  attackLength: 0.5
+  attackSpeed: 12
+  chargeTime: 0.5
   firingPosition: {fileID: 1220202716272440353}
   Aimer: {fileID: 7441695499283855134}
 --- !u!1 &7441695499283855134 stripped

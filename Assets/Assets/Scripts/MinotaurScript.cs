@@ -28,6 +28,7 @@ public class MinotaurScript : MonoBehaviour
     private float currentRunTime;
     public float attackSpeed;
     public float chargeTime;
+    private float currentCharge;
     public GameObject firingPosition;
     public GameObject Aimer;
 
@@ -41,7 +42,7 @@ public class MinotaurScript : MonoBehaviour
         Move();
         CheckforPlayer();
         AttackCooldown();
-        // CheckforDay();
+        CheckforDay();
     }
 
     private void Hurt(int takenDamage)
@@ -83,18 +84,24 @@ public class MinotaurScript : MonoBehaviour
         }
         else
         {
-            if(currentRunTime<attackLength)
-            {
-                transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
-                currentRunTime+=Time.fixedDeltaTime;
-            }
+            if(currentCharge<chargeTime)
+                currentCharge+=Time.fixedDeltaTime;
             else
             {
-                ramming=false;
-                Aimer.SendMessage("UnFreeze");
-                Attacking=false;
-                currentRunTime = 0;
+                if(currentRunTime<attackLength)
+                {
+                    transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
+                    currentRunTime+=Time.fixedDeltaTime;
+                }
+                else
+                {
+                    ramming=false;
+                    Aimer.SendMessage("UnFreeze");
+                    Attacking=false;
+                    currentRunTime = 0;
+                }
             }
+            
         }
         
         
@@ -123,18 +130,13 @@ public class MinotaurScript : MonoBehaviour
         if(currentCooldown>=cooldown)
         {
             Aimer.SendMessage("Freeze");
+            currentCharge=0;
             Attacking=true;
-            StartCoroutine(Ram());
             currentCooldown=0;
         }
             
     }
 
-    private IEnumerator Ram()
-    {
-        yield return new WaitForSeconds(chargeTime);
-        ramming=true;
-    }
 
     private void AttackCooldown()
     {
