@@ -16,7 +16,8 @@ public class TileManager : MonoBehaviour
     bool tileConfirmed = false;
     bool isInteracting = false;
 
-    public List<object> GridData = new List<object>(); //First is the position, then the growth stage
+    public List<int> GridData = new List<int>(); //First is the position index for GridLocations, then the days in current stage, and last is stage number
+    public List<Vector3Int> GridLocations = new List<Vector3Int>();
 
     void Start()
     {
@@ -33,14 +34,6 @@ public class TileManager : MonoBehaviour
                 SetInteracted((Vector3Int)cellPosition);
                 tileConfirmed = true;
                 isInteracting=false;
-            }
-        }
-
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            for(int i=0; i<GridData.Count; i++)
-            {
-                Debug.Log(GridData[i]);
             }
         }
     }
@@ -103,15 +96,33 @@ public class TileManager : MonoBehaviour
         {
             tileConfirmed = false;
 
+            GridLocations.Add(cellPosition);
 
-            GridData.Insert(0, 0);
-            GridData.Insert(0, cellPosition);
+            GridData.Add(GridLocations.IndexOf(cellPosition));
+            GridData.Add(0);
+            GridData.Add(1);
         }
 
     }
 
     public void NewDay()
     {
-        Debug.Log("Detected a new Day");
+        for(int i=0; i<GridData.Count; i+=3)
+        {
+            GridData[i+1]++;
+
+            if(GridData[i+2]==1 && GridData[i+1]==2)
+            {
+                Debug.Log("Growing");
+                GridData[i+2]+=1;
+                GridData[i+1]=0;
+            }
+            else if(GridData[i+2]==2 && GridData[i+1]==3)
+            {
+                Debug.Log("Growing Twice");
+                GridData[i+2]+=1;
+                GridData[i+1]=0;
+            }
+        }
     }
 }

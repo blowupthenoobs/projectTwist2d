@@ -1000,6 +1000,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 76984831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &158587410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1812718595991896110, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+  m_PrefabInstance: {fileID: 317677496236804038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &176391678
 GameObject:
   m_ObjectHideFlags: 0
@@ -43542,6 +43547,8 @@ MonoBehaviour:
   interactedTile: {fileID: 11400000, guid: ab4440d98ff30454498c148552c8e183, type: 2}
   potentiolTile: {fileID: 11400000, guid: 934d61b3141cfd84fbf6a71a56927997, type: 2}
   grid: {fileID: 56006678}
+  GridData: 
+  GridLocations: []
 --- !u!1 &597508452
 GameObject:
   m_ObjectHideFlags: 0
@@ -108844,11 +108851,14 @@ MonoBehaviour:
   moonIcon: {fileID: 1380482707}
   sunIcon: {fileID: 334862660}
   healthBar: {fileID: 1206857046}
+  gun: {fileID: 158587410}
+  TileManager: {fileID: 588515868}
   TimeinDay: 45
   timeSlider: {fileID: 443432790}
   FillArea: {fileID: 481968141}
   dayBarColor: {r: 1, g: 0.8509804, b: 0.28235295, a: 0}
   nightBarColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 0}
+  isday: 1
 --- !u!114 &2053833015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109295,6 +109305,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285843007013041196, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812718595991896110, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3087178717900382529, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
