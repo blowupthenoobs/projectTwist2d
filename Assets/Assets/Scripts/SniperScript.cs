@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SniperScript : MonoBehaviour
 {
-    
+    public GameObject camera;
     public GameObject bullet;
     public GameObject firingPosition;
     public float cooldown;
@@ -40,12 +40,21 @@ public class SniperScript : MonoBehaviour
 
     private void CheckInputs()
     {
-        if(Input.GetAxisRaw("Fire1")!=0)
+        if(Input.GetMouseButtonDown(0))
+            Scope();
+        if(Input.GetMouseButtonUp(0))
             Fire();
+    }
+
+    private void Scope()
+    {
+        camera.GetComponent<CameraControler>().Scoping=true;
     }
 
     private void Fire()
     {
+        camera.GetComponent<CameraControler>().Scoping=false;
+
         if(currentCooldown>=cooldown)
         {
             GameObject projectile = Instantiate(bullet, firingPosition.transform.position, transform.rotation);
