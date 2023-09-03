@@ -110272,7 +110272,7 @@ MonoBehaviour:
   gun: {fileID: 70069351}
   TileManager: {fileID: 588515868}
   playerAnimator: {fileID: 99609594}
-  TimeinDay: 10
+  TimeinDay: 45
   timeSlider: {fileID: 443432790}
   FillArea: {fileID: 481968141}
   dayBarColor: {r: 1, g: 0.8509804, b: 0.28235295, a: 0}
@@ -110792,6 +110792,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5638219447412546278, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+      propertyPath: ShotGun
+      value: 
+      objectReference: {fileID: 891549227}
+    - target: {fileID: 5638219447412546278, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
+      propertyPath: NormalGun
+      value: 
+      objectReference: {fileID: 158587410}
     - target: {fileID: 6252472843707570196, guid: 068a16714315ff44cb1688b4d86059cd, type: 3}
       propertyPath: m_Name
       value: Player
