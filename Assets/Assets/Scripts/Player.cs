@@ -14,14 +14,14 @@ public class Player : MonoBehaviour
 
     public float maxhp;
     public float hp;
+    public float healthUpgrade;
+
+    public GameObject[] gun;
 
 
     [Header("Animations")]
     public Animator _anim;
     private bool isMoving;
-    //public bool DayTime;
-    //public bool NightTime;
-    // public GameObject gameManager;
 
     void Start()
     {
@@ -205,8 +205,42 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void getMouseposition()
+    public void UpgradeFireRate()
     {
+        if(GameManager.Instance.money>=10)
+        {
+            GameManager.Instance.money-=10;
 
+            for(int i=0; i<gun.Length;i++)
+            {
+                gun[i].SendMessage("IncreaseFireRate");
+            }
+        }
+        
+    }
+
+    public void UpgradeDamage()
+    {
+        if(GameManager.Instance.money>=10)
+        {
+            GameManager.Instance.money-=10;
+
+            for(int i=0; i<gun.Length;i++)
+            {
+                gun[i].SendMessage("IncreaseDamage");
+            }
+        }
+        
+    }
+
+    public void IncreaseMaxHP()
+    {
+        if(GameManager.Instance.money>=10)
+        {
+            GameManager.Instance.money-=10;
+            maxhp+=healthUpgrade;
+            hp+=healthUpgrade;
+        }
+        
     }
 }

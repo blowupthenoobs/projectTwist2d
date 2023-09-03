@@ -14,6 +14,10 @@ public class GunScript : MonoBehaviour
     public float bulletLife;
     public float bulletSpeed;
 
+    //Upgrade Variables
+    public int damageIncrease;
+    public float cooldownUpgrade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +67,15 @@ public class GunScript : MonoBehaviour
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
         transform.up = direction;
+    }
+
+    public void IncreaseFireRate()
+    {
+        cooldown-=cooldownUpgrade;
+    }
+
+    public void IncreaseDamage()
+    {
+        damage+=damageIncrease;
     }
 }
