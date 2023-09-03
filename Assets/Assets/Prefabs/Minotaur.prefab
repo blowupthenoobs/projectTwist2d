@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26469344
+      value: -10.63
       objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5459061
+      value: -4.08
       objectReference: {fileID: 0}
     - target: {fileID: 3281209382576109731, guid: 2f633093c90eb5b4ebbd90b9d4915c65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 7
-  moveSpeed: 4
+  moveSpeed: 5
   attackRange: 7
   visionDistance: 10
   closingDistance: 2

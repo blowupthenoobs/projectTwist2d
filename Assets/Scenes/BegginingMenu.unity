@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 988311753}
   - component: {fileID: 988311752}
   - component: {fileID: 988311751}
+  - component: {fileID: 988311754}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -775,9 +776,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1159428730}
-        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
-        m_MethodName: updateScene
+      - m_Target: {fileID: 988311754}
+        m_TargetAssemblyTypeName: MenuStartScript, Assembly-CSharp
+        m_MethodName: BeginGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -825,6 +826,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988311749}
   m_CullTransparentMesh: 1
+--- !u!114 &988311754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988311749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd32c6a578ac521418f0bc5b70d4ef25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060155781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32c6a578ac521418f0bc5b70d4ef25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGame: {fileID: 1120640841}
 --- !u!1 &1123620757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1229,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159428729}
-  - component: {fileID: 1159428730}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -1240,19 +1251,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1159428730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159428727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23dce3216de56c743bcfff4a86831649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 988311751}
 --- !u!1 &1302492517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,7 +1398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32c6a578ac521418f0bc5b70d4ef25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGame: {fileID: 1302492519}
 --- !u!1 &1416008384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd32c6a578ac521418f0bc5b70d4ef25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGame: {fileID: 1671576150}
 --- !u!1 &2008633674
 GameObject:
   m_ObjectHideFlags: 0

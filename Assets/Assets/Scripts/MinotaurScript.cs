@@ -22,7 +22,7 @@ public class MinotaurScript : MonoBehaviour
     private float currentCooldown;
     public float attackCooldown;
     public int damage;
-    private bool Attacking;
+    private bool Attacking=false;
     public float attackLength;
     private float currentRunTime;
     public float attackSpeed;
@@ -40,6 +40,8 @@ public class MinotaurScript : MonoBehaviour
         CheckforPlayer();
         AttackCooldown();
         // CheckforDay();
+
+        Debug.Log(Attacking);
     }
 
     private void Hurt(int takenDamage)
@@ -66,6 +68,7 @@ public class MinotaurScript : MonoBehaviour
         {
             if(targetNearby)
             {
+                Debug.Log("moving");
                 if(Vector2.Distance(transform.position, target.position) > closingDistance)
                 {
                     transform.position=Vector2.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
@@ -73,6 +76,7 @@ public class MinotaurScript : MonoBehaviour
 
                 if(Vector2.Distance(transform.position, target.position) < attackRange)
                 {
+                    Debug.Log("attacked");
                     Attack();
                 }
             }
@@ -81,11 +85,13 @@ public class MinotaurScript : MonoBehaviour
         {
             if(currentRunTime<attackLength)
             {
+                Debug.Log("ramming");
                 transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
                 currentRunTime+=Time.fixedDeltaTime;
             }
             else
             {
+                Debug.Log("stopped running");
                 Aimer.SendMessage("UnFreeze");
                 Attacking=false;
                 currentRunTime = 0;
@@ -100,6 +106,7 @@ public class MinotaurScript : MonoBehaviour
     {
         if(Attacking)
         {
+            Debug.Log("hit something");
             if(other.gameObject.tag=="Enemy")
             {
                 other.gameObject.SendMessage("Hurt", damage);
@@ -114,6 +121,7 @@ public class MinotaurScript : MonoBehaviour
 
     private void Attack()
     {
+        Debug.Log("Started Attacking");
         if(currentCooldown>=cooldown)
         {
             Aimer.SendMessage("Freeze");

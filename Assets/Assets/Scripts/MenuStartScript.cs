@@ -3,31 +3,26 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class MenuStartScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MenuStartScript : MonoBehaviour
 {
-    public TMP_Text StartGame;
-    void Start()
+    // public TMP_Text StartGame;
+    public void BeginGame()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
+    // public void OnPointerEnter(PointerEventData eventData)
+    // {
+    //     StartGame.color = Color.green;
+    // }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        StartGame.color = Color.green;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        StartGame.color = Color.black;
-    }
+    // public void OnPointerExit(PointerEventData eventData)
+    // {
+    //     StartGame.color = Color.black;
+    // }
 
         
     
