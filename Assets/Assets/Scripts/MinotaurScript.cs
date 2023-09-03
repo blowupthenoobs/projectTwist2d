@@ -36,12 +36,11 @@ public class MinotaurScript : MonoBehaviour
     }
     void FixedUpdate()
     {
+        Debug.Log(Attacking);
         Move();
         CheckforPlayer();
         AttackCooldown();
         // CheckforDay();
-
-        Debug.Log(Attacking);
     }
 
     private void Hurt(int takenDamage)
@@ -64,8 +63,8 @@ public class MinotaurScript : MonoBehaviour
     //Move Script
     private void Move()
     {
-        if(!Attacking)
-        {
+        // if(!Attacking)
+        // {
             if(targetNearby)
             {
                 Debug.Log("moving");
@@ -80,23 +79,23 @@ public class MinotaurScript : MonoBehaviour
                     Attack();
                 }
             }
-        }
-        else
-        {
-            if(currentRunTime<attackLength)
-            {
-                Debug.Log("ramming");
-                transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
-                currentRunTime+=Time.fixedDeltaTime;
-            }
-            else
-            {
-                Debug.Log("stopped running");
-                Aimer.SendMessage("UnFreeze");
-                Attacking=false;
-                currentRunTime = 0;
-            }
-        }
+        // }
+        // else
+        // {
+        //     if(currentRunTime<attackLength)
+        //     {
+        //         Debug.Log("ramming");
+        //         transform.position=Vector2.MoveTowards(transform.position, firingPosition.transform.position, attackSpeed*Time.fixedDeltaTime);
+        //         currentRunTime+=Time.fixedDeltaTime;
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("stopped running");
+        //         Aimer.SendMessage("UnFreeze");
+        //         Attacking=false;
+        //         currentRunTime = 0;
+        //     }
+        // }
         
         
         
