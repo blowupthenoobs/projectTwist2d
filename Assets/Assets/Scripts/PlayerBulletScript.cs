@@ -36,11 +36,19 @@ public class PlayerBulletScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag=="Enemy")
+        if(other.gameObject.tag=="Projectile")
         {
-            other.gameObject.SendMessage("Hurt", damage);
+            
         }
+        else
+        {
+            if(other.gameObject.tag=="Enemy")
+            {
+                other.gameObject.SendMessage("Hurt", damage);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        
     }
 }
