@@ -30,7 +30,7 @@ public class TileManager : MonoBehaviour
     void Update()
     {
         
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) && MoonTimer.Instance.isday)
             {
                 if (isInteracting)
                 {
@@ -95,7 +95,9 @@ public class TileManager : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(MoonTimer.Instance.isday)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // get the collision point of the ray with the z = 0 plane
         Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
         cellPosition = grid.WorldToCell(worldPoint);
@@ -103,19 +105,20 @@ public class TileManager : MonoBehaviour
         {
             isInteracting = true;
            SetInteractedPotential((Vector3Int)cellPosition);
-            
         }
+        }
+        
     }
     private void OnMouseExit()
     {
-        if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "PlantStage1" && interactableMap.GetTile(cellPosition).name != "PlantStage2" && interactableMap.GetTile(cellPosition).name != "PlantStage3")
+        if(MoonTimer.Instance.isday)
         {
-            SetInteractedHidden((Vector3Int)cellPosition);
-
-
-        }
-        else
-        {
+            if (!tileConfirmed && interactableMap.GetTile(cellPosition).name != "PlantStage1" && interactableMap.GetTile(cellPosition).name != "PlantStage2" && interactableMap.GetTile(cellPosition).name != "PlantStage3")
+            {
+                SetInteractedHidden((Vector3Int)cellPosition);
+            }
+            else
+            {
             tileConfirmed = false;
 
             GridLocations.Add(cellPosition);
@@ -123,7 +126,9 @@ public class TileManager : MonoBehaviour
             GridData.Add(GridLocations.IndexOf(cellPosition));
             GridData.Add(0);
             GridData.Add(1);
+            }
         }
+        
 
     }
 
