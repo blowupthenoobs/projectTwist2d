@@ -42838,7 +42838,7 @@ MonoBehaviour:
   smoothing: 0.1
   maxPos: {x: 19.5, y: 7.58}
   minPos: {x: -22.3, y: -22.6}
-  Sniper: {fileID: 0}
+  Sniper: {fileID: 745243598}
   ScopePoint: {fileID: 139881090}
   Scoping: 0
   scopeSmooth: 0.5

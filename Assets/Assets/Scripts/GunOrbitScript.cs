@@ -37,19 +37,7 @@ public class GunOrbitScript : MonoBehaviour
 
     private void SwitchWeapons()
     {
-        if(shotgunIsBought)
-        {
-            if(NormalGun.activeInHierarchy)
-            {
-                NormalGun.SetActive(false);
-                ShotGun.SetActive(true);
-            }
-            else if(ShotGun.activeInHierarchy)
-            {
-                NormalGun.SetActive(true);
-                ShotGun.SetActive(false);
-            }
-        }
+        
         if(sniperIsBought)
         {
             if(NormalGun.activeInHierarchy)
@@ -68,7 +56,19 @@ public class GunOrbitScript : MonoBehaviour
                 NormalGun.SetActive(true);
             }
         }
-        
+        else if(shotgunIsBought)
+        {
+            if(NormalGun.activeInHierarchy)
+            {
+                NormalGun.SetActive(false);
+                ShotGun.SetActive(true);
+            }
+            else if(ShotGun.activeInHierarchy)
+            {
+                NormalGun.SetActive(true);
+                ShotGun.SetActive(false);
+            }
+        }
     }
 
     public void BuyWeapon()
